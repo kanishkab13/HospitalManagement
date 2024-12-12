@@ -13,10 +13,9 @@ services:
       - SPRING_DATASOURCE_PASSWORD=root
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
       - SPRING_PROFILES_ACTIVE=dev
-      - EUREKA_SERVER_URL=http://EurekaServer-HospitalManagement:8761/eureka/  # Point to Eureka service
     depends_on:
       - db  # This ensures that the product service starts after the DB container
-      - EurekaServer-HospitalManagement  # Ensure Eureka service is up before this service
+
   db:
     image: postgres:13  # Use the official PostgreSQL 13 image
     container_name: postgres-db
